@@ -1,0 +1,29 @@
+http:
+  conbase_baseline_overview_url: https://conbase.wob.vw.vwg:8443/conbase/api/external/vehicle-products/{vpId}/baselines/{api_version}
+  conbase_baseline_url: https://conbase.wob.vw.vwg:8443/conbase/api/external/vehicle-products/baselines/{baseline_uuid}/{api_version}
+  api_version_baseline: v13
+  api_version_baseline_overview: v13
+s3:
+  endpoint_url: http://minio.esqa:9000/
+  aws_access_key_id: AWS_ACCESS_KEY_ID
+  aws_secret_access_key: AWS_SECRET_ACCESS_KEY
+data:
+   lz:
+      format: delta
+      core_format: csv
+      core: s3a://sqa-core-transfer/rvs/inbox/core
+      conbase_folder: conbase/
+      landing_zone_bucket: sqa-lz-landing
+      landing_zone: s3a://sqa-lz-landing/
+   sz:
+      format: delta
+      conbase_delta_log: conbase
+      delta_log: s3a://sqa-sz-storage/conbase/
+      storage_zone_bucket: sqa-sz-storage
+delta_log:
+  date:
+conbase_cert: /data/cert/cert.pem
+ksu:
+  period_days: 0
+  period_months: 0
+  period_years: 15
