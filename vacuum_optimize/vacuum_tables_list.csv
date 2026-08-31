@@ -1,0 +1,2 @@
+table_name,s3_table_path,days,vacuum_flag,retention_days,vacuum_last_run,vacuum_next_run
+vehicle_extended,s3a://sqa-oz-presentation-layer/Vehicle/Vehicle_Extended/delta/,1,,,,

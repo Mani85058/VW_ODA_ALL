@@ -1,0 +1,2 @@
+table_name,s3_table_path,days,optimize_flag,optimize_last_run,optimize_next_run
+vehicle_extended,s3a://sqa-oz-presentation-layer/Vehicle/Vehicle_Extended/delta/,,,,
