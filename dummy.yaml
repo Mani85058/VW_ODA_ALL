@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aurdre3
+  namespace: esqa-app-fvr
+  labels:
+    user: aurdre3
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      user: aurdre3
+  template:
+    metadata:
+      labels:
+        user: aurdre3
+    spec:
+      imagePullSecrets:
+        - name: esqa-docker-secret
+      containers:
+        - name: app
+          image: docker-public.docker.devstack.vwgroup.com/mendhak/http-https-echo:23
+          ports:
+            - containerPort: 8080

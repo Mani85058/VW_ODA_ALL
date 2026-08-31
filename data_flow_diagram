@@ -1,0 +1,8 @@
+// Data Flow Diagram
+digraph {
+	rankdir=LR size="8,5"
+	table_a -> table_c
+	table_b -> table_c
+	table_c -> table_e
+	table_d -> table_e
+}

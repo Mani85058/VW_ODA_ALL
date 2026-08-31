@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wyr1miq
+  namespace: esqa-app-fvr
+  labels:
+    user: wyr1miq
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      user: wyr1miq
+  template:
+    metadata:
+      labels:
+        user: wyr1miq
+    spec:
+      imagePullSecrets:
+        - name: esqa-docker-secret     #sqa-core-docker-cred
+      containers:
+        - name: app
+          #image: docker-public.docker.devstack.vwgroup.com/mendhak/http-https-echo:23
+          image: sqa-docker.docker.devstack.vwgroup.com/pyspark-delta-dev-ada:72
+          ports:
+            - containerPort: 8080
