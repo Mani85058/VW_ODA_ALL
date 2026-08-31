@@ -1,0 +1,30 @@
+[[source]]
+url = "https://${USERNAME}:${PASSWORD}@jfrog.devstack.vwgroup.com/artifactory/api/pypi/pypi/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+attrs = "==22.1.0"
+boto3 = "==1.19.9"
+botocore = "==1.22.9"
+certifi = "==2022.12.7"
+coverage = "==6.2"
+delta-spark = "==1.0.0"
+deltalake = "==0.5.6"
+dependency-check = "==0.6.0"
+exceptiongroup = "==1.0.4"
+numpy = "==1.24.2"
+oauthlib = "==3.2.2"
+pluggy = "==1.0.0"
+pyhive = "==0.6.4"
+pyspark = "==3.1.2"
+pytest = "==7.2.0"
+pyyaml = "==6.0"
+setuptools = "==67.1.0"
+sqlalchemy = "==1.4.26"
+urllib3 = "==1.26.14"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

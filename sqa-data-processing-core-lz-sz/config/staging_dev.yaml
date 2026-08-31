@@ -1,0 +1,34 @@
+#  config file for core inbox to landing and landing to storage zone
+s3:
+  endpoint_url: http://minio.esqa-d:9000/
+  aws_access_key_id: AWS_ACCESS_KEY_ID
+  aws_secret_access_key: AWS_SECRET_ACCESS_KEY
+log:
+  bucket: sqa-job-logs
+  prefix: lz-sz-application-logs/core/
+data:      
+  inbox:
+     bucket: sqa-lz-inbox
+     path: core/
+     delete_source: True
+     file_pattern: '\.csv'
+  lz:
+     format: '.csv'
+     core: core/
+     landing_zone_bucket: sqa-lz-landing
+     landing_zone: s3a://sqa-lz-landing/
+     duplicates_path: core/core_duplicates/
+     duplicated_strategy: 'overwrite'
+  sz:
+     format: delta
+     core_delta_log: core
+     core_path : s3a://sqa-sz-storage/core/
+     delta_log_sqamodprod: s3a://sqa-sz-storage/core/SQAMODPROD/
+     delta_log_sqamodkpb: s3a://sqa-sz-storage/core/SQAMODKPB/
+     storage_zone_bucket: sqa-sz-storage    
+delta_log:
+  date:
+ksu:
+  period_days: 0
+  period_months: 0
+  period_years: 15

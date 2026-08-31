@@ -1,0 +1,30 @@
+#  config file for core inbox to landing and landing to storage zone tests
+s3:
+  endpoint_url: ""
+  aws_access_key_id: ""
+  aws_secret_access_key: ""
+log:
+  bucket: sqa-job-logs
+  prefix: lz-sz-application-logs/core/
+source:
+  bucket: test-sqa-lz-inbox
+  path: test-core_sample/test_core_data/
+  delete_source: False
+  file_pattern: '\.test_format'
+data:      
+  inbox:
+     bucket: sqa-lz-inbox
+     path: core_demo/
+     delete_source: False
+     file_pattern: '\.csv'
+  lz:
+     format: '.csv'
+     landing_zone: tests/files/files_for_writing/
+  sz:
+     format: csv
+     delta_log_sqamodprod: tests/files/written_data/SQAMODPROD
+     delta_log_sqamodkpb: tests/files/written_data/SQAMODKPB
+check:
+  data : s3a://sqa-sz-storage/core_demo/SQAMODPROD/
+ksu:
+  period: 15
